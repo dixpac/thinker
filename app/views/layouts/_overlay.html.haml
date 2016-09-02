@@ -1,0 +1,21 @@
+.overlay.overlay-hugeinc{"data-behavior" => "overlay"}
+  %button.overlay-close{"data-behavior" => "close-overlay", :type => "button"}
+    %span.glyphicon.glyphicon-remove
+  %nav
+    %h2.grayed-heading.center Sign in or create an account
+    %ul.omniauth-button-group
+      %li.omniauth-button
+        = link_to user_facebook_omniauth_authorize_path, class: 'button facebook' do
+          = icon('facebook-official')
+          Sign in with Facebook
+      %li.omniauth-button.google
+        = link_to user_google_oauth2_omniauth_authorize_path, class: 'button google' do
+          = icon('google')
+          Sign in with Google
+      %li.omniauth-button.twitter
+        = link_to user_twitter_omniauth_authorize_path, class: 'button twitter' do
+          = icon('twitter')
+          Sign in with Twitter
+      %li
+        = link_to "Sign in or Sign up with email", new_user_session_path, class: "signin-signup-link"
+

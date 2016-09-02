@@ -1,6 +1,6 @@
 require "test_helper"
 
-class HomepageTest < Capybara::Rails::TestCase
+class HomepagePlainTest < Capybara::Rails::TestCase
    test "welcome message is visible" do
      visit root_path
 
