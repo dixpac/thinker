@@ -12,7 +12,8 @@
 
     .progress-bar{"data-behavior" => "progress-bar"}
 
-    = yield
+    .container-fluid.main-container
+      = yield
 
   :javascript
     window.userSignedIn = #{user_signed_in?};

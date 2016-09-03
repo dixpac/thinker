@@ -3,9 +3,7 @@
   padding-bottom: 2em;
 }
 
-body.dashboards.show,
-body.dashboards.bookmarks,
-body.dashboards.top_stories {
+body.stories.index {
   .main-container {
     background: $background-gray;
   }
@@ -16,16 +14,5 @@ body.dashboards.top_stories {
     border: 1px solid rgba(0,0,0, 0.09);
     @include box-shadow;
     @include border-radius($radius);
-  }
-}
-
-body.dashboards.top_stories {
-  .top-story-rank {
-    padding-bottom: 1.2em;
-  }
-  .count-button-wrapper {
-    margin: auto;
-    width: 40px;
-    height: 40px;
   }
 }
