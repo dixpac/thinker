@@ -17,6 +17,15 @@ class UserPopover extends React.Component {
           </div>
           <div dangerouslySetInnerHTML={this.renderAvatarImage()} />
         </div>
+        <UserFollowContainer
+          following={this.props.user.isFollowing}
+          followed_id={this.props.user.id}
+          followerCount={this.props.user.followerCount}
+          followingCount={this.props.user.followingCount}
+          hideButton={this.props.user.hideButton}
+          isSignedIn={this.props.user.isSignedIn}
+          className="flex-container flex-space-btw user-follow-container"
+        />
       </div>
     );
   }

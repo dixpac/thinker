@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include Omniauthable
+  include UserFollowing
 
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
