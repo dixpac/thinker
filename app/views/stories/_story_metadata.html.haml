@@ -1,0 +1,7 @@
+.post-metadata
+  = avatar_for story.user, size: 40
+  .post-info
+    = react_component("PopoverLink", { user_id: story.user_id, url: user_path(story.user), children: story.user.username })
+    %small
+      = time_ago_in_words(story.created_at)
+      ago #{story_length_in_minutes(story.body)}

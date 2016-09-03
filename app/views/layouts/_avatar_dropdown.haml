@@ -1,0 +1,11 @@
+%li.account
+  %a.avatar-wrapper.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :role => "button"}
+    = avatar_for(current_user, size: 40)
+  %ul.dropdown-menu.nav-dropdown
+    %span.dropdown-arrow-top
+    %span.dropdown-arrow-bottom
+    %li.nd-main= link_to "New story", new_story_path
+    %li.nd-main= link_to "Drafts and stories", "#"
+    %li.divider{:role => "separator"}
+    %li.nd-sub= link_to "Profile", "#"
+    %li.nd-sub= link_to "Sign out", destroy_user_session_path, method: :delete
