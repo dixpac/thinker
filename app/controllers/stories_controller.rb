@@ -12,7 +12,7 @@ class StoriesController < ApplicationController
   end
 
   def new
-    @story = current_user.stories.new
+    @story = Story.new_draft_for(current_user)
   end
 
   def create
@@ -30,7 +30,7 @@ class StoriesController < ApplicationController
   end
 
   def update
-    @story.assign_attributes(post_params)
+    @story.assign_attributes(story_params)
     if @story.save
       redirect_to @story, notice: "Successfully published the post!"
     else

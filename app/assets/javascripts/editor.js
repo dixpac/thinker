@@ -31,7 +31,7 @@ var Editor = {
     $('[data-behavior="publish-button"').hover(function() {
     });
 
-    $("#post_picture").change(function(){
+    $("#story_picture").change(function(){
       Editor.readURL(this);
       $('#existing-img-previewer').addClass('hidden');
       $('.picture_upload').addClass('active');
@@ -41,10 +41,10 @@ var Editor = {
     /*** Autosave ***/
     $('[data-behavior="autosave"]').autoSave(function() {
       $('[data-behavior="editor-message"]').text('Saving...');
-      Editor.postAutosave($('.editor-form').attr('action'),
+      Editor.storyAutosave($('.editor-form').attr('action'),
                    $('input[name="_method"]').val(),
-                   $('#post_title').val(),
-                   $('#post_body').val()
+                   $('#story_title').val(),
+                   $('#story_body').val()
                   );
     }, 500);
 
@@ -71,13 +71,13 @@ var Editor = {
     }
   },
 
-  postAutosave: function(url, method, title, body) {
+  storyAutosave: function(url, method, title, body) {
     $.ajax({
       url: '/api' + url,
       dataType: "script",
       method: method || "POST",
       data: {
-        post: {
+        story: {
           title: title,
           body: body
         }

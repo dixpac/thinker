@@ -13,5 +13,5 @@
           %li.new-post-button= link_to "Write a story", new_story_path, class: "button"
           = render 'layouts/avatar_dropdown'
         - else
-          %li.new-post-button= link_to "Write a story", new_story_path, class: "button", data: { behavior: 'trigger-overlay' }
+          %li.new-post-button= link_to "Write a story", new_story_path, class: "button"
           %li.sign-in-button= link_to "Sign in / Sign up", new_user_session_path, class: 'button green-border-button', data: { behavior: 'trigger-overlay' }
