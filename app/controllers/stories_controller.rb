@@ -5,7 +5,7 @@ class StoriesController < ApplicationController
   layout "editor", only: [:new, :edit, :create, :update]
 
   def index
-    @stories = current_user.stories
+    @stories = Story.published
   end
 
   def show
@@ -17,10 +17,10 @@ class StoriesController < ApplicationController
 
   def create
     @story = current_user.stories.build(story_params)
-    if @story.save
-      redirect_to @story, notice: "Successfully published the post!"
+    if @story.publish
+      redirect_to root_path, notice: "Successfully published the post!"
     else
-      #@post.unpublish
+      @story.unpublish
       flash.now[:alert] = "Could not update the post, Please try again"
       render :new
     end
@@ -31,9 +31,10 @@ class StoriesController < ApplicationController
 
   def update
     @story.assign_attributes(story_params)
-    if @story.save
-      redirect_to @story, notice: "Successfully published the post!"
+    if @story.publish
+      redirect_to root_path, notice: "Successfully published the post!"
     else
+      @story.unpublish
       flash.now[:alert] = "Could not update the post, Please try again"
       render :edit
     end

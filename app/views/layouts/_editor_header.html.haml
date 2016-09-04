@@ -1,0 +1,13 @@
+%nav.navbar.navbar-default.navbar-fixed-top
+  .container-fluid.col-md-10.col-md-offset-1
+    .navbar-header
+      = link_to root_path, class: "navbar-brand", id: "logo" do
+        = image_tag('logo.png', height: 40, alt: "Stories")
+    %ul.nav.navbar-nav.filter-links
+      %li
+        %a{"data-behavior" => "editor-message", :href => "#"}
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li.publish-button
+          %button.button.green-border-button.pull-right{"data-behavior" => "publish-button"} Publish
+        = render 'layouts/avatar_dropdown'

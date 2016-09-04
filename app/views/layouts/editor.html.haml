@@ -10,7 +10,7 @@
     = favicon_link_tag 'stories-icon-apple-touch-180x180.png', rel: 'apple-touch-icon', type: 'image/png'
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
   %body{:class => "#{controller.controller_name} #{controller.action_name}"}
-    //= render 'layouts/editor_header'
+    = render 'layouts/editor_header'
     //= render 'layouts/alert_messages'
     .progress-bar{"data-behavior" => "progress-bar"}
     .container-fluid
